@@ -1,0 +1,29 @@
+<?php
+// if(get_role(auth()->id)->role_id == env('USER_ROLE_ID'))
+// {
+//     $filter['created_by'] = auth()->id;
+// }
+
+if($filter)
+{
+    $filter_query = [];
+    foreach($filter as $f_key => $f_value)
+    {
+        $filter_query[] = "$f_key = '$f_value'";
+    }
+
+    $filter_query = implode(' AND ', $filter_query);
+
+    $where = (empty($where) ? 'WHERE ' : ' AND ') . $filter_query;
+}
+
+$where .= (empty($where) ? 'WHERE ' : 'AND ') . " ((visibility = 'PRIVATE' AND created_by = ".auth()->id.") OR visibility = 'PUBLIC') ";
+
+$db->query = "SELECT * FROM $this->table $where ORDER BY ".$col_order." ".$order[0]['dir']." LIMIT $start,$length";
+$data  = $this->db->exec('all');
+
+$total = $this->db->exists($this->table,$where,[
+    $col_order => $order[0]['dir']
+]);
+
+return compact('data','total');

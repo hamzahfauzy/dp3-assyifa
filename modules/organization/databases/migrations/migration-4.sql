@@ -1,0 +1,2 @@
+ALTER TABLE organization_positions DROP CONSTRAINT fk_organization_positions_organization_id;
+ALTER TABLE organization_positions DROP COLUMN organization_id;
