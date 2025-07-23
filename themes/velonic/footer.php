@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 text-center">
-                                Copyright &copy; <?= date('Y') ?>
+                                Copyright &copy; <?= date('Y') ?> STIKES ASSYIFA KISARAN
                             </div>
                         </div>
                     </div>

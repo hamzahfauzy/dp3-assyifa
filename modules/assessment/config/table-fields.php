@@ -110,4 +110,130 @@ return [
             'type' => 'options:Pejabat|Atasan Pejabat'
         ],
     ],
+
+    'standard_parameters' => [
+        'description' => [
+            'label' => 'Deskripsi',
+            'type' => 'textarea'
+        ],
+        'target_description' => [
+            'label' => 'Sasaran',
+            'type' => 'textarea'
+        ],
+        'achievement_strategy' => [
+            'label' => 'Strategi Capaian',
+            'type' => 'textarea'
+        ],
+        'budget' => [
+            'label' => 'Anggaran',
+            'type' => 'number'
+        ],
+    ],
+
+    'target_indicators' => [
+        'parameter_id' => [
+            'label' => 'Parameter',
+            'type' => 'options-obj:standard_parameters,id,description'
+        ],
+        'description' => [
+            'label' => 'Deskripsi',
+            'type' => 'textarea'
+        ],
+        'baseline' => [
+            'label' => 'Baseline',
+            'type' => 'number'
+        ],
+        'baseline' => [
+            'label' => 'Baseline (%)',
+            'type' => 'number'
+        ],
+        'achievement_target' => [
+            'label' => 'Target Capaian (%)',
+            'type' => 'number'
+        ],
+
+    ],
+
+    'performances' => [
+        'parameter_id' => [
+            'label' => 'Parameter',
+            'type' => 'options-obj:standard_parameters,id,description'
+        ],
+        'indicator_id' => [
+            'label' => 'Indikator',
+            'type' => 'options-obj:target_indicators,id,description'
+        ],
+        'description' => [
+            'label' => 'Deskripsi',
+            'type' => 'textarea'
+        ],
+        'status' => [
+            'label' => 'Status',
+            'type' => 'text'
+        ],
+        // 'weight_target' => [
+        //     'label' => 'Bobot Target',
+        //     'type' => 'number'
+        // ],
+        // 'actual_target' => [
+        //     'label' => 'Target Aktual',
+        //     'type' => 'number'
+        // ],
+        // 'actual_value' => [
+        //     'label' => 'Nilai Aktual',
+        //     'type' => 'number'
+        // ]
+    ],
+
+    'performance_users' => [
+        'performance_id' => [
+            'label' => 'Kinerja',
+            'type' => 'options-obj:performances,id,description'
+        ],
+        'user_id' => [
+            'label' => 'Pengguna',
+            'type' => 'options-obj:users,id,name'
+        ]
+    ],
+
+    'performance_logs' => [
+        'performance_id' => [
+            'label' => 'Kinerja',
+            'type' => 'options-obj:performances,id,description'
+        ],
+        'description' => [
+            'label' => 'Deskripsi',
+            'type' => 'textarea'
+        ]
+    ],
+
+    'performance_comments' => [
+        'performance_id' => [
+            'label' => 'Kinerja',
+            'type' => 'options-obj:performances,id,description'
+        ],
+        'user_id' => [
+            'label' => 'Pengguna',
+            'type' => 'options-obj:users,id,name'
+        ],
+        'content' => [
+            'label' => 'Isi Komentar',
+            'type' => 'textarea'
+        ]
+    ],
+
+    'performance_files' => [
+        'performance_id' => [
+            'label' => 'Kinerja',
+            'type' => 'options-obj:performances,id,description'
+        ],
+        'file_name' => [
+            'label' => 'Nama File',
+            'type' => 'text'
+        ],
+        'file_url' => [
+            'label' => 'URL File',
+            'type' => 'text'
+        ]
+    ]
 ];

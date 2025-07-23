@@ -33,9 +33,9 @@
                 <?php foreach($module['menu'] as $k => $menu): ?>
                     <li class="side-nav-item">
                         <a 
-                            class="side-nav-link <?=getActive() == $menu['activeState'] ? 'active' : ''?>"
+                            class="side-nav-link <?= in_array(getActive(), is_array($menu['activeState']) ? $menu['activeState'] : [$menu['activeState']]) ? 'active' : '' ?>"
                             <?php if(isset($menu['items'])) : ?>
-                            data-bs-toggle="collapse" href="#sidebar<?=$key?>-<?=$k?>" aria-expanded="false" aria-controls="sidebar-<?=$key?>-<?=$k?>" 
+                            data-bs-toggle="collapse" href="#sidebar<?=$key?>-<?=$k?>" aria-expanded="<?= in_array(getActive(), is_array($menu['activeState']) ? $menu['activeState'] : [$menu['activeState']]) ? 'true' : '' ?>" aria-controls="sidebar-<?=$key?>-<?=$k?>" 
                             <?php else: ?>
                             href="<?=$menu['route'] ?>" 
                             <?php endif ?>
@@ -48,7 +48,7 @@
                         </a>
 
                         <?php if(isset($menu['items'])): ?>
-                        <div class="collapse" id="sidebar<?=$key?>-<?=$k?>">
+                        <div class="collapse <?= in_array(getActive(), is_array($menu['activeState']) ? $menu['activeState'] : [$menu['activeState']]) ? 'show' : '' ?>" id="sidebar<?=$key?>-<?=$k?>">
                             <ul class="side-nav-second-level">
                                 <?php if(isset($menu['items'])) foreach($menu['items'] as $item): ?>
                                 <li>

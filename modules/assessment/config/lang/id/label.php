@@ -35,5 +35,9 @@ return [
 
     'title' => 'Judul',
     'created_at' => 'Tanggal Dibuat',
-    'work_date' => 'Tanggal Kerja'
+    'work_date' => 'Tanggal Kerja',
+
+    'standard_parameters' => 'Parameter Standar',
+    'target_indicators' => 'Indikator Capaian',
+    'performances' => 'Kinerja Tambahan'
 ];

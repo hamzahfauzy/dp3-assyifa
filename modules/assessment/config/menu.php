@@ -43,11 +43,63 @@ $menu = [
         ]
     ],
     [
-        'label' => 'assessment.menu.evaluation_reports',
+        'label' => 'assessment.menu.performance',
         'icon'  => 'fa-fw fa-xl me-2 fa-solid fa-clipboard',
-        'activeState' => 'assessment.assessment_evaluations',
-        'route' => routeTo('crud/index',['table'=>'assessment_evaluations']),
+        'activeState' => [
+            'assessment.assessment_evaluations',
+            'assessment.standard_parameters',
+            'assessment.target_indicators',
+            'assessment.performances'
+        ],
+        'items' => [
+            [
+                'label' => 'Parameter Standar',
+                'route' => routeTo('crud/index',['table'=>'standard_parameters']),
+                'activeState' => 'assessment.standard_parameters',
+            ],
+            [
+                'label' => 'Indikator Capaian',
+                'route' => routeTo('crud/index',['table'=>'target_indicators']),
+                'activeState' => 'assessment.target_indicators',
+            ],
+            [
+                'label' => 'Kinerja Utama',
+                'route' => routeTo('crud/index',['table'=>'assessment_evaluations']),
+                'activeState' => 'assessment.assessment_evaluations',
+            ],
+            [
+                'label' => 'Kinerja Tambahan',
+                'route' => routeTo('crud/index',['table'=>'performances']),
+                'activeState' => 'assessment.performances',
+            ],
+        ]
     ],
+    [
+        'label' => 'Pokja',
+        'icon'  => 'fa-fw fa-xl me-2 fa-solid fa-clipboard',
+        'activeState' => [
+            'assessment.parameter_pokja',
+            'assessment.indikator_pokja',
+        ],
+        'items' => [
+            [
+                'label' => 'Parameter Standar',
+                'route' => '#',
+                'activeState' => 'assessment.parameter_pokja',
+            ],
+            [
+                'label' => 'Indikator Capaian',
+                'route' => '#',
+                'activeState' => 'assessment.indikator_pokja',
+            ]
+        ]
+    ]
+    // [
+    //     'label' => 'assessment.menu.evaluation_reports',
+    //     'icon'  => 'fa-fw fa-xl me-2 fa-solid fa-clipboard',
+    //     'activeState' => 'assessment.assessment_evaluations',
+    //     'route' => routeTo('crud/index',['table'=>'assessment_evaluations']),
+    // ],
 ];
 
 // if(get_role(auth()->id)->id == 1)

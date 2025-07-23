@@ -12,4 +12,9 @@ return [
     'evaluation_reports' => 'Evaluasi Laporan',
     'assessments' => 'Asesmen',
     'reports' => 'Laporan',
+    'standar_parameter' => 'Parameter Standar',
+    'performance' => 'Kinerja',
+    'main_performance' => 'Kinerja Utama',
+    'additional_performance' => 'Kinerja Tambahan',
+    'performances' => 'Kinerja Tambahan'
 ];
