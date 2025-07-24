@@ -12,7 +12,7 @@ if(!in_array(1, $roleIds) && !in_array(env('EVALUATOR_ROLE_ID'), $roleIds))
     unset($fields['user_id']);
 }
 
-unset($fields['actual_value']);
+// unset($fields['actual_value']);
 
 $fields['created_at'] = [
     'type' => 'datetime-local',
