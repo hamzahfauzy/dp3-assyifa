@@ -93,13 +93,33 @@ $menu = [
                 'activeState' => 'assessment.indikator_pokja',
             ]
         ]
-    ]
-    // [
-    //     'label' => 'assessment.menu.evaluation_reports',
-    //     'icon'  => 'fa-fw fa-xl me-2 fa-solid fa-clipboard',
-    //     'activeState' => 'assessment.assessment_evaluations',
-    //     'route' => routeTo('crud/index',['table'=>'assessment_evaluations']),
-    // ],
+    ],
+    [
+        'label' => 'Laporan',
+        'icon'  => 'fa-fw fa-xl me-2 fa-solid fa-file',
+        'activeState' => [
+            // 'assessment.assessment_evaluations',
+            'assessment.performance_report',
+            'assessment.pokja_report',
+        ],
+        'items' => [
+            // [
+            //     'label' => 'Laporan Evaluasi',
+            //     'route' => routeTo('crud/index',['table'=>'assessment_evaluations']),
+            //     'activeState' => 'assessment.assessment_evaluations',
+            // ],
+            [
+                'label' => 'Grafik Kinerja',
+                'route' => '/assessment/reports/performance-graphics',
+                'activeState' => 'assessment.performance_report',
+            ],
+            [
+                'label' => 'Grafik Pokja',
+                'route' => '/assessment/reports/pokja-graphics',
+                'activeState' => 'assessment.pokja_report',
+            ]
+        ]
+    ],
 ];
 
 // if(get_role(auth()->id)->id == 1)
