@@ -84,12 +84,12 @@ $menu = [
         'items' => [
             [
                 'label' => 'Parameter Standar',
-                'route' => '#',
+                'route' => '/assessment/pokja/parameters/index',
                 'activeState' => 'assessment.parameter_pokja',
             ],
             [
                 'label' => 'Indikator Capaian',
-                'route' => '#',
+                'route' => '/assessment/pokja/indicators/index',
                 'activeState' => 'assessment.indikator_pokja',
             ]
         ]

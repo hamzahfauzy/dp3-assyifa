@@ -29,6 +29,10 @@ table td img {
                 <label for="" class="mb-2"><?= __('assessment.label.notes') ?></label>
                 <textarea name="notes" id="" class="form-control"><?=$data->notes?></textarea>
             </div>
+            <div class="form-group mb-3">
+                <label for="" class="mb-2">Nilai</label>
+                <input name="actual_value" type="number" id="" class="form-control" value="<?=$data->actual_value?>">
+            </div>
             <div class="form-group">
                 <button class="btn btn-primary">Submit</button>
             </div>

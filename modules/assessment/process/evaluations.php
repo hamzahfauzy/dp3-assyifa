@@ -16,6 +16,7 @@ if(Request::isMethod('POST'))
 {
     $db->update('assessment_evaluations', [
         'notes' => $_POST['notes'],
+        'actual_value' => $_POST['actual_value'],
         'evaluator_id' => auth()->id
     ], [
         'id' => $data->id

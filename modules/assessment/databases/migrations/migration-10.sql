@@ -1,0 +1,1 @@
+ALTER TABLE assessment_evaluations ADD COLUMN actual_value INT DEFAULT NULL;

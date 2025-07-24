@@ -87,6 +87,10 @@ return [
             'label' => __('assessment.label.notes'),
             'type' => 'textarea'
         ],
+        'actual_value' => [
+            'label' => 'Nilai',
+            'type' => 'number'
+        ],
     ],
     'assessment_records' => [
         'period_id' => [
@@ -169,18 +173,18 @@ return [
         ],
         'status' => [
             'label' => 'Status',
-            'type' => 'text'
+            'type' => 'options:BARU|ON PROSES|SELESAI|SEDANG EVALUASI|FEEDBACK|SELESAI EVALUASI'
         ],
         // 'weight_target' => [
         //     'label' => 'Bobot Target',
         //     'type' => 'number'
         // ],
-        // 'actual_target' => [
-        //     'label' => 'Target Aktual',
-        //     'type' => 'number'
-        // ],
+        'actual_target' => [
+            'label' => 'Target Capaian',
+            'type' => 'number'
+        ],
         // 'actual_value' => [
-        //     'label' => 'Nilai Aktual',
+        //     'label' => 'Nilai',
         //     'type' => 'number'
         // ]
     ],
